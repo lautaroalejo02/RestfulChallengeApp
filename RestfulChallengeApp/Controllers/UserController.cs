@@ -45,7 +45,12 @@ namespace RestfulChallengeApp.Controllers
         [HttpPost]
         public void Post([FromBody] User user)
         {
-            _userDbContext.Users.Add(user);
+            User oUser = new User();
+            oUser.Nombre = user.Nombre;
+            oUser.Apellido = user.Apellido;
+            oUser.Email = user.Email;
+            oUser.Password = BCrypt.Net.BCrypt.HashPassword(user.Nombre);
+            _userDbContext.Users.Add(oUser);
             _userDbContext.SaveChanges();
         }
         //PUT para actualizar el usuario.
@@ -62,7 +67,7 @@ namespace RestfulChallengeApp.Controllers
             entity.Nombre = user.Nombre;
             entity.Apellido = user.Apellido;
             entity.Email = user.Email;
-            entity.Password = user.Password;
+            entity.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
             _userDbContext.SaveChanges();
             return Ok("User modified");
         }
