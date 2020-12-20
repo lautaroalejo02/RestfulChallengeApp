@@ -1,0 +1,26 @@
+Para la creacion de la tabla se utiliza el siguiente Script
+USE [UsersDb]
+GO
+
+/****** Object: Table [dbo].[Users] Script Date: 19/12/2020 18:10:44 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Users] (
+    [Id]       INT            IDENTITY (1, 1) NOT NULL,
+    [Nombre]   NVARCHAR (MAX) NOT NULL,
+    [Apellido] NVARCHAR (MAX) NOT NULL,
+    [Email]    NVARCHAR (MAX) NOT NULL,
+    [Password] NVARCHAR (MAX) NOT NULL
+);
+
+Para popular la base de datos con algunos datos se utiliza el siguiente Script
+
+SET IDENTITY_INSERT [dbo].[Users] ON
+INSERT INTO [dbo].[Users] ([Id], [Nombre], [Apellido], [Email], [Password]) VALUES (1, N'Lautaro', N'Alejo', N'lautitomasalejo@gmail.com', N'Sonomar02')
+INSERT INTO [dbo].[Users] ([Id], [Nombre], [Apellido], [Email], [Password]) VALUES (2, N'Tomas', N'Alejo', N'lautarotomasalejo@gmai.com', N'12345')
+INSERT INTO [dbo].[Users] ([Id], [Nombre], [Apellido], [Email], [Password]) VALUES (3, N'Mario', N'Alejo', N'mario@gmail.com', N'54321')
+SET IDENTITY_INSERT [dbo].[Users] OFF
