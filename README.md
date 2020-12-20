@@ -42,8 +42,8 @@ update-database
 #### Esta base de datos debe ser populada con el siguiente script
 ```SQL
 SET IDENTITY_INSERT [dbo].[Users] ON
-INSERT INTO [dbo].[Users] ([Id], [Nombre], [Apellido], [Email], [Password]) VALUES (1, N'Lautaro', N'Alejo', N'lautitomasalejo@gmail.com', N'Testing')
-INSERT INTO [dbo].[Users] ([Id], [Nombre], [Apellido], [Email], [Password]) VALUES (2, N'Tomas', N'Alejo', N'lautarotomasalejo@gmai.com', N'12345')
+INSERT INTO [dbo].[Users] ([Id], [Nombre], [Apellido], [Email], [Password]) VALUES (1, N'Lautaro', N'Alejo', N'lautitomasalejo@gmail.com', N'$2a$11$jQl0K6Q6VX8iLK/YEV4KjuiXpUh9MqTeiSLomSPlLbk5UnF2gFYKC')
+INSERT INTO [dbo].[Users] ([Id], [Nombre], [Apellido], [Email], [Password]) VALUES (2, N'Tomas', N'Alejo', N'lautarotomasalejo@gmai.com', N'$2a$11$Qm/yKyICGYQXYrrOI/Eq6eNBLEw.1B4LkcHxsdsTnPaG.fNF7jYyy')
 INSERT INTO [dbo].[Users] ([Id], [Nombre], [Apellido], [Email], [Password]) VALUES (3, N'Lisandro', N'Alejo', N'mario@gmail.com', N'$2a$11$a6nfBSHLDPfHoIGgmJE7U.FgJjTJev1MwyDTLq4Zg7oev3mYISOgu')
 SET IDENTITY_INSERT [dbo].[Users] OFF
 
