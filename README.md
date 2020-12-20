@@ -49,3 +49,19 @@ SET IDENTITY_INSERT [dbo].[Users] OFF
 
 ```
 Luego de este paso, ya podria utilizar la base de datos para el desafio 3 sin nigun problema
+
+
+##Para utilizar los endpoints debe usar las siguientes direcciones 
+### DESAFIO 1
+https://localhost:portnumber/api/RestfulApp/paises/AR
+https://localhost:portnumber/api/RestfulApp/paises/CO
+https://localhost:portnumber/api/RestfulApp/paises/BR
+
+### DESAFIO 2
+https://localhost:portnumber/api/RestfulApp/busqueda/iphone12
+
+### DESAFIO 3
+#### Ver todos los usuarios
+https://localhost:portnumber/Usuarios/User/
+#### Ver 1 usuario
+https://localhost:portnumber/Usuarios/User/2
