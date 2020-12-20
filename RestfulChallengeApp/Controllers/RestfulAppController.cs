@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using RestfulChallengeApp.Models;
+using RestfulChallengeApp.Service;
 using Microsoft.AspNetCore.Http;
 using RestSharp;
 using System.Net;
@@ -33,9 +34,7 @@ namespace RestfulChallengeApp.Controllers
             }
             else
             {
-                var client = new RestClient("https://api.mercadolibre.com/classified_locations/countries/" + country);
-                var request = new RestRequest(Method.GET);
-                var content = client.Execute(request).Content;
+                var content = ServicePaises.Paises(country);
                 return Ok(content);
             }
 
@@ -48,9 +47,7 @@ namespace RestfulChallengeApp.Controllers
         [HttpGet("[action]/{item}")]
         public IActionResult Busqueda(string item)
         {
-            var client = new RestClient("https://api.mercadolibre.com/sites/MLA/search?q=" + item);
-            var request = new RestRequest(Method.GET);
-            var content = client.Execute(request).Content;
+            var content = ServiceBusqueda.Paises(item);
             Search oSearch = new Search(content);
             return Ok(oSearch);
         }
