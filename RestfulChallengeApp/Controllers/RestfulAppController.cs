@@ -24,16 +24,17 @@ namespace RestfulChallengeApp.Controllers
         [HttpGet("[action]/{country}")]
         public IActionResult Paises(string country)
         {
-            if (country == "CO")
+            if (country == "CO" || country == "co")
             {
                 return StatusCode(401);
             }
-            else if (country == "BR")
+            else if (country == "BR" || country == "br")
             {
                 return StatusCode(401);
             }
             else
             {
+                //Obtiene los datos del servicio paises que recibe el api
                 var content = ServicePaises.Paises(country);
                 return Ok(content);
             }
