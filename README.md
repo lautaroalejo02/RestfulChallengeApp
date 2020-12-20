@@ -53,15 +53,26 @@ Luego de este paso, ya podria utilizar la base de datos para el desafio 3 sin ni
 
 ##Para utilizar los endpoints debe usar las siguientes direcciones 
 ### DESAFIO 1
+https://restfulappchallenge.azurewebsites.net/api/RestfulApp/paises/AR
+https://restfulappchallenge.azurewebsites.net/api/RestfulApp/paises/CO
+https://restfulappchallenge.azurewebsites.net/api/RestfulApp/paises/BR
+#### En caso de usar bd local
 https://localhost:portnumber/api/RestfulApp/paises/AR
 https://localhost:portnumber/api/RestfulApp/paises/CO
 https://localhost:portnumber/api/RestfulApp/paises/BR
 
 ### DESAFIO 2
-https://localhost:portnumber/api/RestfulApp/busqueda/iphone12
+https://restfulappchallenge.azurewebsites.net/api/RestfulApp/busqueda/iphone11
+#### En caso de usar bd local
+https://localhost:portnumber/api/RestfulApp/busqueda/iphone11
 
 ### DESAFIO 3
-#### Ver todos los usuarios
+##### Ver todos los usuarios
+https://restfulappchallenge.azurewebsites.net/Usuarios/User/
+##### Ver 1 usuario
+https://restfulappchallenge.azurewebsites.net/Usuarios/User/2
+#### En caso de usar bd local
+##### Ver todos los usuarios
 https://localhost:portnumber/Usuarios/User/
-#### Ver 1 usuario
+##### Ver 1 usuario
 https://localhost:portnumber/Usuarios/User/2
