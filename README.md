@@ -13,7 +13,7 @@ Al clonar ese proyecto puede demorar un poco al tener que usar los paquetes requ
 ## DB Usage
 La base de datos actual esta montada en un servidor Azure asi que se puede usar sin ningun problema.
 En caso de querer usar una base de datos local. Sera necesario seguir los siguientes pasos
-1- Ir al archivo Startup.cs y dejarlo de la siguiente manera
+### Ir al archivo Startup.cs y dejarlo de la siguiente manera
 ```c#
 public void ConfigureServices(IServiceCollection services)
         {
@@ -28,17 +28,17 @@ public void ConfigureServices(IServiceCollection services)
 
         }
 ```
-Luego de este paso debe ejecutar el siguiente comando en la consola PM
+###Luego de este paso debe ejecutar el siguiente comando en la consola PM
 
 ```
 Add-Migration
 ```
-Y luego nuevamente
+###Y luego nuevamente
 ```
 update-database
 ```
-Despues de realizar estos pasos deberia ver una base de datos llamada UserDb con una tabla Users en su servidor local
-Esta base de datos debe ser populada con el siguiente script
+###Despues de realizar estos pasos deberia ver una base de datos llamada UserDb con una tabla Users en su servidor local
+###Esta base de datos debe ser populada con el siguiente script
 ```SQL
 SET IDENTITY_INSERT [dbo].[Users] ON
 INSERT INTO [dbo].[Users] ([Id], [Nombre], [Apellido], [Email], [Password]) VALUES (1, N'Lautaro', N'Alejo', N'lautitomasalejo@gmail.com', N'Testing')
