@@ -1,5 +1,7 @@
 # RestfulChallengeApp
 Desafio Nubimetrics para Backend
+En este link puede probar los endpoints
+[Restful Challenge](https://restfulappchallenge.azurewebsites.net/swagger/index.html)
 ## DB Usage
 La base de datos actual esta montada en un servidor Azure asi que se puede usar sin ningun problema.
 En caso de querer usar una base de datos local. Sera necesario seguir los siguientes pasos
@@ -17,4 +19,16 @@ public void ConfigureServices(IServiceCollection services)
             });
 
         }
+```
+Luego de este paso debe ejecutar el siguiente comando en la consola PM
+```
+update-database
+```
+En caso de que no funcione debera ejecutar lo siguiente
+```
+Add-Migration
+```
+Y luego nuevamente
+```
+update-database
 ```
