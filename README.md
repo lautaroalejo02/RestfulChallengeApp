@@ -44,7 +44,7 @@ update-database
 SET IDENTITY_INSERT [dbo].[Users] ON
 INSERT INTO [dbo].[Users] ([Id], [Nombre], [Apellido], [Email], [Password]) VALUES (1, N'Lautaro', N'Alejo', N'lautitomasalejo@gmail.com', N'Testing')
 INSERT INTO [dbo].[Users] ([Id], [Nombre], [Apellido], [Email], [Password]) VALUES (2, N'Tomas', N'Alejo', N'lautarotomasalejo@gmai.com', N'12345')
-INSERT INTO [dbo].[Users] ([Id], [Nombre], [Apellido], [Email], [Password]) VALUES (3, N'Lisandro', N'Alejo', N'mario@gmail.com', N'54321')
+INSERT INTO [dbo].[Users] ([Id], [Nombre], [Apellido], [Email], [Password]) VALUES (3, N'Lisandro', N'Alejo', N'mario@gmail.com', N'$2a$11$a6nfBSHLDPfHoIGgmJE7U.FgJjTJev1MwyDTLq4Zg7oev3mYISOgu')
 SET IDENTITY_INSERT [dbo].[Users] OFF
 
 ```
