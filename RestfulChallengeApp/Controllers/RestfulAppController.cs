@@ -38,13 +38,11 @@ namespace RestfulChallengeApp.Controllers
                 var content = ServicePaises.Paises(country);
                 return Ok(content);
             }
-
         }
         //Busqueda de objetos.
         //Devuelve un json en el cual tenemos un array de results en el cual esta la informacion relevante para lo solicitado.
         //Se accede localhost:port/api/RestfulApp/paises/CodigoPais.
         [SwaggerOperation(Summary = "Busqueda de articulos.", Description = "Devuelve un json en el cual tenemos un array de results en el cual esta la informacion relevante para lo solicitado.")]
-
         [HttpGet("[action]/{item}")]
         public IActionResult Busqueda(string item)
         {
@@ -52,6 +50,5 @@ namespace RestfulChallengeApp.Controllers
             Search oSearch = new Search(content);
             return Ok(oSearch);
         }
-       
     }
 }

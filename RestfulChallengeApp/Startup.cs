@@ -23,16 +23,13 @@ namespace RestfulChallengeApp
         {
             Configuration = configuration;
         }
-
         public IConfiguration Configuration { get; }
-
-      
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
             services.AddControllers().AddNewtonsoftJson();
-            //services.AddDbContext<UserDbContext>(option => option.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=UsersDb;"));
-            services.AddDbContext<UserDbContext>(option => option.UseSqlServer(Configuration.GetConnectionString("UserDbContext")));
+            services.AddDbContext<UserDbContext>(option => option.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=UsersDb;"));
+            //services.AddDbContext<UserDbContext>(option => option.UseSqlServer(Configuration.GetConnectionString("UserDbContext")));
             services.AddSwaggerGen(options =>
             {
                 options.EnableAnnotations();
