@@ -12,29 +12,14 @@ Link del repositorio a clonar https://github.com/lautaroalejo02/RestfulChallenge
 Al clonar ese proyecto puede demorar un poco al tener que usar los paquetes requeridos del proyecto
 
 ## DB Usage
-### La base de datos actual esta montada en un servidor Azure asi que al clonar el repositorio puede usarla sin necesidad de tener la bd local.
-### En caso de querer usar una base de datos local. Sera necesario seguir los siguientes pasos
-#### Ir al archivo Startup.cs y dejarlo de la siguiente manera
-```c#
-public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddControllers();
-            services.AddControllers().AddNewtonsoftJson();
-            services.AddDbContext<UserDbContext>(option => option.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=UsersDb;"));
-            services.AddSwaggerGen(options =>
-            {
-                options.EnableAnnotations();
-               
-            });
+### La base de datos actual es una base de datos en un servidor local. Para usarla debe seguir los siguiente pasos
 
-        }
-```
-### Luego de este paso debe ejecutar el siguiente comando en la consola PM
+### Lo primero que debemos hacer es ejecutar este comando en la consola Package Manager
 
 ```
-Add-Migration
+Add-Migration FirstMigration
 ```
-### Y luego nuevamente
+### Y luego el siguiente
 ```
 update-database
 ```
@@ -49,6 +34,24 @@ SET IDENTITY_INSERT [dbo].[Users] OFF
 
 ```
 Luego de este paso, ya podria utilizar la base de datos para el desafio 3 sin nigun problema
+### Par usar la base de datos montada en Azure solo debe seguir los siguientes pasos
+#### Para usar una base de datos en Azure solo hace falta cambiar lo siguiente 
+#### Ir al archivo Startup.cs y dejarlo de la siguiente manera
+```c#
+public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson();
+            services.AddDbContext<UserDbContext>(option => option.UseSqlServer(Configuration.GetConnectionString("UserDbContext")));
+            services.AddSwaggerGen(options =>
+            {
+                options.EnableAnnotations();
+               
+            });
+
+        }
+```
+
 
 
 ##Para utilizar los endpoints debe usar las siguientes direcciones 
